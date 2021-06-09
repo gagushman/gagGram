@@ -1,9 +1,30 @@
 {% extends 'main\layout.html' %}
+{% load static %}
 
 {% block title %}gagGram | Главная{% endblock %}
 
 {% block body %}
+    {% for el in post %}
+        <div class="active_item">
+                <div class="post">
+                    <div class="post_profile_and_photo">
+                        <img src="{{ el.user_avatar.url }}" alt="Фото профиля" class="profile_photo">
+                        <div class="nickname_and_place">
+                            <div class="nickname">{{ el.user_nickname }}</div>
+                            <div class="place">{{ el.place }}</div>
+                        </div>
+                    </div>
 
-Главная страница
+                    <img class="photo" src="{{ el.img.url }}" alt="Фото пост">
 
+                    <div class="post_bottom">
+                        <div class="date">Добавлено 2 дня назад</div>
+                        <div class="description">{{ el.description }}</div>
+                        <div class="comments">Комментарии</div>
+                    </div>
+                </div>
+        </div>
+    {% endfor %}
 {% endblock %}
+
+

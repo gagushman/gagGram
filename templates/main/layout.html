@@ -8,26 +8,45 @@
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 </head>
 <body>
-    <div class="header">
-        <div class="header_inner">
-            <div class="header_section">
-                <a class="logo" href="#"><img class="imglogo" src="{% static 'main/img/header_logo.png' %}" alt="logo"</a>
+     <div class="container">
+        <div class="header">
+            <div class="header_inner">
+                <div class="header_section">
+                    <a class="logo" href="#"><img class="imglogo" src="{% static 'main/img/header_logo.png' %}" alt="logo"/></a>
+                </div>
+
+                <div class="header_section">
+                    <input class="search" type="text" value="search">
+                </div>
+
+                <div class="header_section">
+                    <div class="header__item headerButton"><a href="#">home</a></div>
+                    <div class="header__item headerButton" ><a href="#">direct</a></div>
+                    <div class="header__item headerButton"><a href="#">events</a></div>
+                    <div class="header__item headerButton"><a href="#">profile</a></div>
+                </div>
             </div>
-            <div class="header_section">
-                <div class="header__item headerButton"><a href="#">home</a></div>
-                <div class="header__item headerButton" ><a href="#">direct</a></div>
-                <div class="header__item headerButton"><a href="#">events</a></div>
-                <div class="header__item headerButton"><a href="#">profile</a></div>
+        </div>
+
+        <div class="retreat"></div>
+
+        <div class="active">
+
+            <div class="active_body">
+
+                {% block body %}
+                {% endblock %}
+            </div>
+            <div class="navbar">
+                <div class="account">
+                    <img src="{% static 'main/img/profile_photo.jpg' %}" alt="Аватар пользователя" class="avatar">
+                    <div class="account_names">
+                        <p class="account_nickname">gagushman</p>
+                        <p class="account_name">Mikhail Gagushihev</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-
-
-    <main>
-        {% block body %}
-        {% endblock %}
-    </main>
-
 </body>
 </html>
